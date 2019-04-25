@@ -1,0 +1,67 @@
+<div class="container-fluid banner-fixed">
+        <div class="row height-max">
+           <div class="container height-max">
+              <div class="row height-max">
+                 <div class="d-flex banner-flex">
+                    <form [formGroup]="formControl" (ngSubmit)="search()">
+                    <mat-form-field class="example-full-width">
+                       <input type="text" placeholder="Flight Number" (keypress)="numberOnly($event)" aria-label="Number" matInput formControlName="flightNumber" 
+                       [matAutocomplete]="auto" (keyup)="getSearchResult('flightNumber')" minlength="4" maxlength="4">
+                       <!-- <div *ngIf="flightNumber.errors.minlength">
+                            Name must be at least 4 characters long.
+                          </div> -->
+                       <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option (onSelectionChange)="autoSuggestionSelect($event)" *ngFor="let option of options" [value]="option">
+                          {{option}}
+                          </mat-option>
+                       </mat-autocomplete>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                       <input type="text" placeholder="Origin" aria-label="Number" (keypress)="lettersOnly($event)" minlength="3" maxlength="3" matInput formControlName="origin" [matAutocomplete]="auto" (keyup)="getSearchResult('origin')">
+                       <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option (onSelectionChange)="autoSuggestionSelect('destination')" *ngFor="let option of options" [value]="option">
+                          {{option}}
+                          </mat-option>
+                       </mat-autocomplete>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                       <input type="text" placeholder="Destination" aria-label="Number" (keypress)="lettersOnly($event)" minlength="3" maxlength="3" matInput formControlName="destination" [matAutocomplete]="auto"
+                       (keyup)="getSearchResult('destination')">
+                       <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option  (onSelectionChange)="autoSuggestionSelect('destination')" *ngFor="let option of options" [value]="option">
+                          {{option}}
+                          </mat-option>
+                       </mat-autocomplete>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                       <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="selectedDate" placeholder="Choose a date">
+                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                       <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="search-button">Search</button>
+                    <span class="errMessage">{{errorMessage}}</span>
+                    </form>
+                    <div class="content-binding" >
+                       <a (click)="resetData()" >Clear Data</a>
+                       <p>Flight Details:</p>
+                       <div >
+                          <span style="color:red" *ngIf="noData">No Data Found</span>
+                          <ul *ngFor="let data of selectedFlight">
+                             <li> Flight Number : {{data.flightNumber}}</li>
+                             <li> aircraft : {{data.aircraft}}</li>
+                             <li> arrival : {{data.arrival}}</li>
+                             <li> carrier : {{data.carrier}}</li>
+                             <li> departure : {{data.departure}}</li>
+                             <li>destination : {{data.destination}}</li>
+                             <li> distance : {{data.distance}}</li>
+                             <li> origin : {{data.origin}}</li>
+                             <li>  status : {{data.status}}</li>
+                             <li> travelTime : {{data.travelTime}}</li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>

@@ -1,0 +1,105 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{font-family: 'Calibri';}
+.banner-fixed
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.cjnotebook.com/wp-content/uploads/2017/10/airline.jpg');
+    background-position: 100% 100%;
+    background-size: cover;
+}
+.banner-flex
+{
+    height: 100%;display: flex;flex-direction: column;
+
+}
+.banner-flex form{      margin-top: auto;margin-bottom: 15px;
+    position: relative;
+    background: rgba(255,255,255,0.5);
+    padding: 25px;
+    padding-bottom: 10px;
+    border-radius: 7px;}
+.height-max{height: 100%;}
+.mat-form-field-underline {
+   background-color: transparent; 
+}
+.mat-form-field-label-wrapper {
+    border-bottom: 1px solid #333;
+}
+.mat-form-field-flex {
+    font-size: 18px;
+    color: #333;
+}
+.search-button
+{
+    margin-left: 21px!important;
+    font-size: 18px!important;
+    padding: 3px 33px!important;
+}
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 215px!important;
+}
+.mat-input-element::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #333!important;
+  }
+  .mat-input-element::-moz-placeholder { /* Firefox 19+ */
+    color: #333!important;
+  }
+  .mat-input-element :-ms-input-placeholder { /* IE 10+ */
+    color: #333!important;
+  }
+  .mat-input-element:-moz-placeholder { /* Firefox 18- */
+    color: #333!important;
+  }
+  .mat-form-field-label {
+    color: #333;
+    font-weight: bold!important;
+}
+.mat-input-element
+{
+    font-weight: bold!important;
+}
+.content-binding
+{
+    position: relative;
+    background: rgba(255,255,255,0.5);
+    padding: 25px;
+    padding-bottom: 10px;
+    border-radius: 7px;margin-bottom: auto;
+}
+.content-binding p
+{
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 27px;
+}
+
+ul{
+  font-size: 19px;
+  line-height: 27px;
+   columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.errMessage{
+    display: block;
+    color: red;
+    font-size: 18px;
+}
+a{
+    float: right;
+    color: #4a0bbb;
+    font-size: 16px;
+    cursor: pointer;
+}
