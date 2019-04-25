@@ -1,0 +1,17 @@
+{
+  "name": "FilghtSearch",
+  "description": "Filght Search",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Surya S",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.2.0",
+    "cors": "^2.8.4",
+    "express": "~4.2.0",
+    "nodemon": "^1.17.5"
+  },
+  "devDependencies": {}
+}
